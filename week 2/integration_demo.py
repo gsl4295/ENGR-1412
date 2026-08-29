@@ -1,4 +1,8 @@
 # unnecessarily doing calculus outside of class. we'll say it's for honors credit (it's not)
+# using ai is for losers :)
+# use your brain, i promise you'll like it
+# {from aspen <3}
+
 import csv
 import matplotlib.pyplot
 import pandas
@@ -64,7 +68,7 @@ class Function:
         matplotlib.pyplot.grid()
         matplotlib.pyplot.show() # i did it!!!
 
-f = Function("(x*x*x)", 0.001, (-1, 1)) # hardcoding this for now. it'll have text input as an optional thing at some point.
+f = Function("(x*x*x)", 5, (0, 10)) # hardcoding this for now. it'll have text input as an optional thing at some point.
 f.evaluate_function()
 f.integrate()
 f.report_results()
