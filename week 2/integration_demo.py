@@ -8,10 +8,10 @@ import matplotlib.pyplot
 import pandas
 
 class Function:
-    def __init__(self, function: str, dx: float, bounds: tuple):
+    def __init__(self, function: str, dx: float, domain: tuple):
         self.function = function
         self.dx = dx
-        self.domain = bounds
+        self.domain = domain
         self.x = []
         self.y = []
         self.approximations = []
@@ -40,9 +40,9 @@ class Function:
 
     def report_results(self):
         print("--------------- Details ----------------")
-        print(f"dx = {self.dx}")
         print(f"function = {self.function}")
-        print(f"bounds = {self.domain}")
+        print(f"dx = {self.dx}")
+        print(f"domain = {self.domain}")
         print("\n--------------- Results ----------------")
         print(f"area under curve = {round(self.area_under_curve, 10)}")
         print("\n--------------- Options ----------------")
@@ -68,7 +68,7 @@ class Function:
         matplotlib.pyplot.grid()
         matplotlib.pyplot.show() # i did it!!!
 
-f = Function("(x*x*x)", 5, (0, 10)) # hardcoding this for now. it'll have text input as an optional thing at some point.
+f = Function("(x*x)", 0.1, (0, 1)) # hardcoding this for now. it'll have text input as an optional thing at some point.
 f.evaluate_function()
 f.integrate()
 f.report_results()
