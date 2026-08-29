@@ -1,4 +1,4 @@
-# unnecessarily doing calculus outside of class. we'll say it's for honors.
+# unnecessarily doing calculus outside of class. we'll say it's for honors credit (it's not)
 
 class Function:
     def __init__(self, function: str, dx: float, bounds: tuple):
@@ -39,7 +39,7 @@ class Function:
         print("--------------- Results ----------------")
         print(f"area under curve = {round(self.area_under_curve, 10)}")
 
-f = Function("(x*x*x)",0.001,(-10, 0)) # hardcoding this for now. it'll have text input as an optional thing at some point.
+f = Function("(x*x*x)", 0.001, (-10, 0)) # hardcoding this for now. it'll have text input as an optional thing at some point.
 f.evaluate_function()
 f.integrate()
 f.report_results()
