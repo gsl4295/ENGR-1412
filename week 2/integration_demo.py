@@ -1,6 +1,4 @@
-# using ai is for losers :)
-# use your brain instead <3
-# {from aspen}
+# unnecessarily doing calculus outside of class. we'll say it's for honors.
 
 class Function:
     def __init__(self, function: str, dx: float, bounds: tuple):
@@ -11,7 +9,6 @@ class Function:
         self.y = []
         self.approximations = []
         self.area_under_curve = 0
-        pass
 
     def evaluate_function(self):
         for i in range(int((self.domain[1] - self.domain[0]) / self.dx) + 1):
@@ -42,7 +39,7 @@ class Function:
         print("--------------- Results ----------------")
         print(f"area under curve = {round(self.area_under_curve, 10)}")
 
-f = Function("(x*x*x)",0.001,(-10, 0))
+f = Function("(x*x*x)",0.001,(-10, 0)) # hardcoding this for now. it'll have text input as an optional thing at some point.
 f.evaluate_function()
 f.integrate()
 f.report_results()
