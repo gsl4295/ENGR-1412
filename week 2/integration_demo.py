@@ -1,8 +1,3 @@
-# unnecessarily doing calculus outside of class. we'll say it's for honors credit (it's not)
-# using ai is for losers :)
-# use your brain, i promise you'll like it
-# {from aspen <3}
-
 import csv
 import matplotlib.pyplot
 import pandas
@@ -26,7 +21,10 @@ class Function:
             self.x.append(x_value) # needs more testing here... who knows what values im forgetting
         for value in self.x:
             formatted_equation = self.function.replace("x",str(value))
-            self.y.append(round(eval(formatted_equation), 10))
+            try:
+                self.y.append(round(eval(formatted_equation), 10))
+            except ZeroDivisionError:
+                self.y.append(0)
 
     def integrate(self):
         for i in range(len(self.x)):
@@ -61,8 +59,11 @@ class Function:
         else:
             previous_area = self.dx_results[self.counter - 1]
             current_area = self.dx_results[self.counter]
-            percent_area_difference = abs(current_area / previous_area)
-            if percent_area_difference < 0.99999:
+            try:
+                percent_area_difference = abs(current_area / previous_area)
+            except ZeroDivisionError:
+                percent_area_difference = 0
+            if percent_area_difference < 0.9999:
                 self.reset_results()
                 self.dx_optimizer()
             else:
@@ -100,5 +101,5 @@ class Function:
         matplotlib.pyplot.grid()
         matplotlib.pyplot.show() # i did it!!! aaaaaaaaaa
 
-f = Function("(x*x)", (-1, 1)) # hardcoding this stuff for now. it'll have text input as an optional thing at some point.
+f = Function("(x*x*x*x)", (-10, 10)) # hardcoding this stuff for now. it'll have text input as an optional thing at some point.
 f.dx_optimizer()
