@@ -101,5 +101,6 @@ class Function:
         matplotlib.pyplot.grid()
         matplotlib.pyplot.show() # i did it!!! aaaaaaaaaa
 
-f = Function("(x*x*x*x)", (-10, 10)) # hardcoding this stuff for now. it'll have text input as an optional thing at some point.
+
+f = Function("(x*x)", (-1, 1)) # hardcoding this stuff for now. it'll have text input as an optional thing at some point.
 f.dx_optimizer()
