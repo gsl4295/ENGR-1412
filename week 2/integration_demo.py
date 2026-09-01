@@ -84,6 +84,9 @@ class Function:
         if graphing_option == "y":
             self.convert_to_csv()
             self.graph_results()
+        else:
+            print("Integral solved :)")
+            exit(0)
 
     def convert_to_csv(self):
         header = ["x","f(x)"]
