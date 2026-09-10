@@ -1,0 +1,3 @@
+"""
+finally starting python today
+"""
