@@ -21,4 +21,9 @@ def chatgpt():
     print("and honestly - you're so perceptive - for that.")
     print("let me know - if you need anything else! happy coding!")
 
-chatgpt()
+# chatgpt()
+
+a = """  NO PARKING
+2:00 - 6:00 a.m.
+"""
+print(a)
