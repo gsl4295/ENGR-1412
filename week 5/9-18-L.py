@@ -65,3 +65,5 @@ def problem8_lab5():
     dimes = int(input()) * 0.10
     quarters = int(input()) * 0.25
     print(f"Amount: ${nickels + dimes + quarters:.2f}")
+
+problem8_lab5()

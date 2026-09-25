@@ -80,12 +80,12 @@ class Function:
         print(f"optimized dx = {self.dx}")
         print(f"approximated area under curve = {round(self.area_under_curve, 10)}")
         print("\n--------------- Options ----------------")
+        print("Integral solved :)")
         graphing_option = input("(y/n) - graph results? - ")
         if graphing_option == "y":
             self.convert_to_csv()
             self.graph_results()
         else:
-            print("Integral solved :)")
             exit(0)
 
     def convert_to_csv(self):
@@ -105,5 +105,5 @@ class Function:
         matplotlib.pyplot.show() # i did it!!! aaaaaaaaaa
 
 
-f = Function("(x*x)", (-1, 1)) # hardcoding this stuff for now. it'll have text input as an optional thing at some point.
+f = Function("(x*x)+(6*x)+9", (-10, 10)) # hardcoding this stuff for now. it'll have text input as an optional thing at some point.
 f.dx_optimizer()
