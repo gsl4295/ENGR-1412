@@ -79,11 +79,10 @@ def lab6_problem8():
     all_score_set.update(score_set2)
     print(all_score_set)
 
-    # Find the scores which are failed
+    # sets really are not fun
     failed_set = all_score_set.difference(passed_set)
     print(failed_set)
 
-    # Show how many students failed
     num_of_failed = len(failed_set)
 
     print('Total {} student failed'.format(num_of_failed), end='')
