@@ -81,8 +81,8 @@ class Function:
         print(f"approximated area under curve = {round(self.area_under_curve, 10)}")
         print("\n--------------- Options ----------------")
         print("Integral solved :)")
-        graphing_option = input("(y/n) - graph results? - ")
-        if graphing_option == "y":
+        graphing_decision = input("(y/n) - graph results? - ")
+        if graphing_decision == "y":
             self.convert_to_csv()
             self.graph_results()
         else:
@@ -104,6 +104,7 @@ class Function:
         matplotlib.pyplot.grid()
         matplotlib.pyplot.show() # i did it!!! aaaaaaaaaa
 
+# yeah this seems right for week 2 of programming class
 
-f = Function("(x*x)+(6*x)+9", (-10, 10)) # hardcoding this stuff for now. it'll have text input as an optional thing at some point.
+f = Function("(x*x*x*x*x*x*23)+(6*x)+9", (-10, 10)) # hardcoding this stuff for now. it'll have text input as an optional thing at some point.
 f.dx_optimizer()
