@@ -47,7 +47,7 @@ class Function:
         self.calculation_counter += len(self.approximations)
         self.approximations.clear()
 
-    def dx_optimizer(self):
+    def dx_optimizer(self, graph=False):
         self.counter += 1
         self.dx *= (1/2)
         self.dx = round(self.dx, 10)
@@ -55,7 +55,7 @@ class Function:
         self.dx_results[self.counter] = self.integrate()
         if self.counter == 1:
             self.reset_results()
-            self.dx_optimizer()
+            self.dx_optimizer(graph)
         else:
             previous_area = self.dx_results[self.counter - 1]
             current_area = self.dx_results[self.counter]
@@ -65,12 +65,12 @@ class Function:
                 percent_area_difference = 0
             if percent_area_difference < 0.9999:
                 self.reset_results()
-                self.dx_optimizer()
+                self.dx_optimizer(graph)
             else:
                 self.calculation_counter += len(self.approximations)
-                self.report_results()
+                self.report_results(graph)
 
-    def report_results(self):
+    def report_results(self, graph):
         print("--------------- Details ----------------")
         print(f"function = {self.function}")
         print(f"domain = {self.domain}")
@@ -81,12 +81,9 @@ class Function:
         print(f"approximated area under curve = {round(self.area_under_curve, 10)}")
         print("\n--------------- Options ----------------")
         print("Integral solved :)")
-        graphing_decision = input("(y/n) - graph results? - ")
-        if graphing_decision == "y":
+        if graph:
             self.convert_to_csv()
             self.graph_results()
-        else:
-            exit(0)
 
     def convert_to_csv(self):
         header = ["x","f(x)"]
@@ -104,7 +101,8 @@ class Function:
         matplotlib.pyplot.grid()
         matplotlib.pyplot.show() # i did it!!! aaaaaaaaaa
 
-# yeah this seems right for week 2 of programming class
+# yeah this seems right for week02 of programming class
 
-f = Function("(x*x*x*x*x*x*23)+(6*x)+9", (-10, 10)) # hardcoding this stuff for now. it'll have text input as an optional thing at some point.
-f.dx_optimizer()
+if __name__ == "__main__":
+    f = Function("(x)", (-10, 10)) # hardcoding this stuff for now. it'll have text input as an optional thing at some point.
+    f.dx_optimizer(False)
